@@ -8,6 +8,7 @@ import {
   Grid,
   AvatarGroup,
   Stack,
+  Card,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import Logo from "../../../../assets/images/logo.webp";
@@ -31,9 +32,10 @@ const FeatureSection = styled(Box)(({ theme }) => ({
   backgroundColor: "#f5f5f5",
 }));
 
-const StatBox = styled(Box)(({ theme }) => ({
+const StatBox = styled(Card)(({ theme }) => ({
   textAlign: "center",
   padding: theme.spacing(2),
+  borderRadius: "16px",
 }));
 
 function Home() {
