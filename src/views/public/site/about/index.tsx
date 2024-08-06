@@ -26,6 +26,7 @@ const TitleSection = styled(Box)(({ theme }) => ({
 
 const FeatureSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2, 2),
+  height: "512px",
 }));
 
 const ValueCard = styled(Card)(({ theme }) => ({
@@ -35,6 +36,7 @@ const ValueCard = styled(Card)(({ theme }) => ({
   boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.15)",
   backgroundColor: "rgba(255, 255, 255, 0.5)",
   transition: "transform 0.3s, box-shadow 0.3s",
+  height: "100%",
   "&:hover": {
     transform: "scale(1.05)",
     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
@@ -64,17 +66,15 @@ function About() {
 
   const handleDownload = async () => {
     setLoading(true);
-    // Simulate a download process
     setTimeout(() => {
-      // You can replace this with actual download logic
       const link = document.createElement("a");
-      link.href = "/tuzuk.docx"; // public dizinindeki dosya yolunu kullanıyoruz
+      link.href = "/tuzuk.docx";
       link.download = "besiktasli-doktorlar-dernegi-tuzugu.docx";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       setLoading(false);
-    }, 3000); // Simulating a 3-second download
+    }, 2000);
   };
 
   return (
@@ -167,49 +167,58 @@ function About() {
               </ValueCard>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <ValueCard>
-                <Stack
-                  spacing={2}
-                  direction={"row"}
-                  className="hoverEffect"
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  mb={2}
-                >
-                  <IconBox>
-                    <CompassionSvg />
-                  </IconBox>
-                  <span className="H-22-38-700">Kuruluşumuz</span>
-                </Stack>
+              <Stack>
+                <ValueCard>
+                  <Stack
+                    spacing={2}
+                    direction={"row"}
+                    className="hoverEffect"
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    mb={2}
+                  >
+                    <IconBox>
+                      <CompassionSvg />
+                    </IconBox>
+                    <span className="H-22-38-700">Kuruluşumuz</span>
+                  </Stack>
 
-                <p className="B-18">
-                  Derneğimiz, T.C. Anayasası’nın öngördüğü esaslara, Atatürk
-                  ilkelerine ve Türkiye Cumhuriyeti değerlerine uygun olarak
-                  19.03.2024 Dünya Beşiktaşlılar Gününde, Beşiktaş Jimnastik
-                  Kulübü’nün resmi izni ile Beşiktaş ruhuna sahip ve Hipokrat
-                  yeminine sadık tıp ve diş hekimleri tarafından büyük bir coşku
-                  ve kararlılıkla kurulmuştur.
-                </p>
-              </ValueCard>
-              <LoadingButton
-                variant="contained"
-                loading={loading}
-                onClick={handleDownload}
-                loadingIndicator="İndiriliyor..."
-                startIcon={<DownloadIcon />}
-                sx={{
-                  mt: 6,
-                  width: "100%",
-                  backgroundColor: "#333",
-                  color: "white",
-                  borderRadius: "20px",
-                  padding: "5px 20px",
-                  height: "50px",
-                  "&:hover": { backgroundColor: "#000" },
-                }}
-              >
-                Tüzüğümüzü İndirin
-              </LoadingButton>
+                  <p className="B-18">
+                    Derneğimiz, T.C. Anayasası’nın öngördüğü esaslara, Atatürk
+                    ilkelerine ve Türkiye Cumhuriyeti değerlerine uygun olarak
+                    19.03.2024 Dünya Beşiktaşlılar Gününde, Beşiktaş Jimnastik
+                    Kulübü’nün resmi izni ile Beşiktaş ruhuna sahip ve Hipokrat
+                    yeminine sadık tıp ve diş hekimleri tarafından büyük bir
+                    coşku ve kararlılıkla kurulmuştur. Derneğimiz, sağlık
+                    alanında en yüksek standartları benimseyerek topluma fayda
+                    sağlamayı amaçlamaktadır. Ayrıca, üyelerimizin mesleki
+                    gelişimini desteklemek ve sağlık bilincini artırmak için
+                    çeşitli etkinlikler düzenlemekteyiz.
+                  </p>
+                </ValueCard>
+                <LoadingButton
+                  variant="contained"
+                  loading={loading}
+                  onClick={handleDownload}
+                  loadingIndicator="İndiriliyor..."
+                  startIcon={<DownloadIcon />}
+                  sx={{
+                    mt: 6,
+                    width: "100%",
+                    backgroundColor: "#333",
+                    color: "white",
+                    borderRadius: "20px",
+                    padding: "5px 20px",
+                    height: "50px",
+                    textTransform: "capitalize",
+                    "&:hover": { backgroundColor: "#000" },
+                  }}
+                >
+                  <span className="B-18" style={{ color: "#fff" }}>
+                    Tüzüğümüzü İndirin
+                  </span>
+                </LoadingButton>
+              </Stack>
             </Grid>
 
             <Grid item xs={12} sm={4}>

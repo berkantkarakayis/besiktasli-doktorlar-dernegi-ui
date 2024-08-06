@@ -73,7 +73,7 @@ function Members() {
         </Swiper>
         <Button
           variant="contained"
-          endIcon={<ArrowForwardIcon />}
+          endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
           sx={{
             mt: 4,
             width: "100%",
@@ -82,10 +82,14 @@ function Members() {
             borderRadius: "20px",
             padding: "5px 20px",
             height: "50px",
+            textTransform: "capitalize",
             "&:hover": { backgroundColor: "#000" },
           }}
         >
-          Bütün Kurucu Üyeleri Gör
+          <span className="B-18" style={{ color: "#fff" }}>
+            {" "}
+            Bütün Kurucu Üyeleri Gör
+          </span>
         </Button>
       </div>
     </section>

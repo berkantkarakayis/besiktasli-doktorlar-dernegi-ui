@@ -14,7 +14,6 @@ function SiteLayout() {
       <Home />
       <About />
       <Members />
-      <Routes>{/* <Route path="/" element={<componentAdı />} />  */}</Routes>
       <Footer />
     </>
   );
