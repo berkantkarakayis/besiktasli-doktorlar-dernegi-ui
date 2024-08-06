@@ -58,16 +58,16 @@ function Header() {
           <LinkButton onClick={() => navigate("about")}>
             <Typography variant="body1">Hakkımızda</Typography>
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("members")}>
             <Typography variant="body1">Üyelerimiz</Typography>
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("events")}>
             <Typography variant="body1">Etkinlikler</Typography>
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("contact")}>
             <Typography variant="body1">İletişim</Typography>
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("membership")}>
             <Typography variant="body1">Üyelik</Typography>
           </LinkButton>
         </Box>

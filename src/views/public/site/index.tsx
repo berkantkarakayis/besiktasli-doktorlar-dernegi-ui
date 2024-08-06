@@ -5,6 +5,7 @@ import Header from "../../../components/layout-components/Header";
 import Footer from "../../../components/layout-components/Footer";
 import About from "./about";
 import Home from "./home";
+import Members from "./members";
 
 function SiteLayout() {
   return (
@@ -12,6 +13,7 @@ function SiteLayout() {
       <Header />
       <Home />
       <About />
+      <Members />
       <Routes>{/* <Route path="/" element={<componentAdı />} />  */}</Routes>
       <Footer />
     </>
