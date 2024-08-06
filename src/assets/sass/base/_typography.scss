@@ -1,0 +1,582 @@
+// =====================
+// Heading: Typography
+// =====================
+// Define variables for font paths
+
+// Set Inter as the default font for the entire application
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.H-50-54-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px; /* 108% */
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.H-44-56-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 127.273% */
+  letter-spacing: -0.88px;
+}
+
+.H-38-38-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px; /* 100% */
+  letter-spacing: -0.76px;
+}
+
+.H-34-34-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 100% */
+  letter-spacing: -0.68px;
+}
+
+.H-30-30-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 100% */
+  letter-spacing: -0.6px;
+}
+
+.H-26-26-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 100% */
+  letter-spacing: -0.52px;
+}
+
+.H-24-32-600 {
+  color: var(--Gray-Gray-900, #181c32);
+
+  /* Display xs/Semibold */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+}
+
+.H-24-24-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 100% */
+  letter-spacing: -0.24px;
+}
+
+.H-24 {
+  color: var(--Gray-Gray-900, #181c32);
+  /* Header/24 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.24px;
+}
+
+.H-22-38-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px; /* 172.727% */
+  letter-spacing: -0.22px;
+}
+
+.H-22-22-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 100% */
+  letter-spacing: -0.22px;
+}
+
+.H-20-20-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 100% */
+}
+
+// =====================
+// Body: Typography
+// =====================
+
+.B-22-38-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 38px; /* 172.727% */
+  letter-spacing: -0.22px;
+}
+
+.B-20-20-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 150% */
+}
+
+.B-20-30-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 150% */
+}
+
+.B-18 {
+  color: var(--Gray-Gray-900, #181c32);
+  /* Body 18 */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: -0.18px;
+}
+
+.B-18-30-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 166.667% */
+}
+
+.B-18-28-600 {
+  color: var(--Gray-900, #101828);
+  /* Text lg/Semibold */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+}
+
+.B-18-18-600 {
+  color: var(--Gray-Gray-800, #3f4254);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 100% */
+  letter-spacing: -0.18px;
+}
+
+.B-18-20-600 {
+  color: var(--Gray-900, #101828);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 111.111% */
+}
+
+.B-18-18-500 {
+  color: var(--Gray-Gray-800, #3f4254);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 100% */
+  letter-spacing: -0.18px;
+}
+
+.B-16-16-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 100% */
+}
+
+.B-16-25-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px; /* 156.25% */
+}
+
+.B-16-24-600 {
+  color: var(--Gray-900, #101828);
+
+  /* Text md/Semibold */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.B-16 {
+  color: var(--Gray-Gray-700, #5e6278);
+  /* body1/regular */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.B-14 {
+  color: var(--Gray-Gray-700, #5e6278);
+  /* body1/regular */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.B-16-16-600 {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 16px; /* 100% */
+}
+
+.B-15-20-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 133.333% */
+}
+
+.B-15-15-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 106.667% */
+}
+
+.B-15-24-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 160% */
+}
+
+.B-15-24-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 160% */
+}
+
+.B-15-15-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 106.667% */
+}
+
+.B-14-20-500 {
+  /* Text sm/Medium */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.B-14-14-600-black {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 100% */
+}
+
+.B-14-14-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 100% */
+}
+
+.B-14-24-500 {
+  color: var(--Gray-Gray-600, #7e8299);
+  /* body/regular 2 */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+
+.B-14-22-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.B-14-22-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 157.143% */
+}
+
+.B-14-20-400 {
+  color: var(--Gray-Gray-600, #7e8299);
+  font-family: Inter !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 20px !important; /* 142.857% */
+}
+
+.B-14-16-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
+}
+
+.B-14-16-400 {
+  color: var(--Gray-Gray-600, #7e8299);
+  /* Input inside */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+}
+
+.B-14-14-600 {
+  color: var(--Gray-Gray-500, #a1a5b7);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 100% */
+}
+
+.B-14-14-500 {
+  color: var(--Gray-Gray-800, #3f4254);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 100% */
+}
+.B-16-16-500 {
+  color: var(--Gray-Gray-800, #3f4254);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 100% */
+}
+
+.B-14-14-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px; /* 100% */
+}
+
+.B-13-13-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 107.692% */
+}
+
+.B-13-21-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 161.538% */
+}
+
+.B-13-13-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 107.692% */
+}
+
+.B-13-14-700 {
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px; /* 107.692% */
+}
+
+.B-12-20-500 {
+  color: var(--Gray-Gray-600, #7e8299);
+  text-align: right;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+.B-12-18-600 {
+  color: var(--Gray-500, #667085);
+
+  /* Text xs/Semibold */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+}
+
+.B-12-18-500 {
+  color: var(--Gray-500, #667085);
+
+  /* Text xs/Medium */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 150% */
+}
+
+.B-12-16-400 {
+  color: var(--Gray-Gray-700, #5e6278);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+}
+
+.B-12-12-500 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px; /* 100% */
+}
+
+.B-12-12-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px; /* 100% */
+}
+
+.B-12-12-700 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px; /* 100% */
+}
+
+.B-12-16-700 {
+  /* Caption 2 (Bold) */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  font-weight: 700;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.12px;
+}
+
+.B-11-11-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 11px; /* 100% */
+}
+
+.B-10-10-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 10px; /* 100% */
+  letter-spacing: -0.3px;
+}
+
+.B-9-9-600 {
+  color: var(--Gray-Gray-900, #181c32);
+  font-family: Inter;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 9px; /* 100% */
+  letter-spacing: -0.27px;
+}

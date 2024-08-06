@@ -10,11 +10,9 @@ function SiteLayout() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/*   <Route path="/about" element={<aboutcomponenti />} />
-        <Route path="/" element={<componentAdı />} /> */}
-      </Routes>
+      <Home />
+      <About />
+      <Routes>{/* <Route path="/" element={<componentAdı />} />  */}</Routes>
       <Footer />
     </>
   );

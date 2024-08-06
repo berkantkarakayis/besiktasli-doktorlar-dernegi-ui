@@ -6,14 +6,12 @@ function Footer() {
     <Box
       component="footer"
       sx={{
-        position: "relative",
-        left: 0,
-        bottom: 0,
         width: "100%",
         backgroundColor: "#333",
         color: "white",
         textAlign: "center",
         py: 2,
+        mt: 100, // TODO - REMOVE
       }}
     >
       Footer

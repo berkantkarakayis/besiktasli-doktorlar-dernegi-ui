@@ -40,6 +40,11 @@ const LinkButton = styled(Button)(({ theme }) => ({
 }));
 
 function Header() {
+  const navigate = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <GlassAppBar position="fixed">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -47,10 +52,10 @@ function Header() {
           <img src={Logo} alt="Besiktasli-doktorlar-dernegi-logo" width={60} />
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("home")}>
             <Typography variant="body1">Ana Sayfa</Typography>
           </LinkButton>
-          <LinkButton>
+          <LinkButton onClick={() => navigate("about")}>
             <Typography variant="body1">Hakkımızda</Typography>
           </LinkButton>
           <LinkButton>
