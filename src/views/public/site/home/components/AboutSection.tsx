@@ -32,7 +32,7 @@ const ValueCard = styled(Card)(({ theme }) => ({
     transform: "scale(1.05)",
     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
     "& .hoverEffect": {
-      backgroundColor: "#f96b6b",
+      backgroundColor: "var(--red-secondary)",
       color: "#fff",
       padding: theme.spacing(1),
       borderRadius: "8px",
@@ -45,7 +45,7 @@ const IconBox = styled(Box)(({ theme }) => ({
   width: "50px",
   height: "50px",
   marginBottom: theme.spacing(2),
-  backgroundColor: "#ed1c24",
+  backgroundColor: "var(--red-primary)",
   borderRadius: "50%",
   justifyContent: "center",
   alignItems: "center",
@@ -69,7 +69,10 @@ function AboutSection() {
   };
 
   return (
-    <section id="about" style={{ backgroundColor: "#f7f7f7", height: "100vh" }}>
+    <section
+      id="about"
+      style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
+    >
       <div className="container">
         <TitleSection>
           <span className="H-44-56-700">Hakkımızda</span>

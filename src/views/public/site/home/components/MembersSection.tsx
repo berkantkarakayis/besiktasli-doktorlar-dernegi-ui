@@ -33,7 +33,7 @@ function MembersSection() {
   return (
     <section
       id="members"
-      style={{ backgroundColor: "#f7f7f7", height: "100%" }}
+      style={{ backgroundColor: "var(--bg-color)", height: "100%" }}
     >
       <div className="container">
         <TitleSection>
@@ -78,16 +78,16 @@ function MembersSection() {
           sx={{
             mt: 4,
             width: "100%",
-            backgroundColor: "#333",
-            color: "white",
+            backgroundColor: "var(--black-primary)",
+            color: "var(--white-color)",
             borderRadius: "20px",
             padding: "5px 20px",
             height: "50px",
             textTransform: "capitalize",
-            "&:hover": { backgroundColor: "#000" },
+            "&:hover": { backgroundColor: "var(--black-color)" },
           }}
         >
-          <span className="B-18" style={{ color: "#fff" }}>
+          <span className="B-18" style={{ color: "var(--white-color)" }}>
             Bütün Kurucu Üyeleri Gör
           </span>
         </Button>

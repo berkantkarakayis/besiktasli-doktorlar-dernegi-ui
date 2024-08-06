@@ -24,20 +24,20 @@ const GlassAppBar = styled(AppBar)(({ theme }) => ({
 
 const GlassButton = styled(Button)(({ theme }) => ({
   backdropFilter: "blur(10px)",
-  backgroundColor: "#333",
+  backgroundColor: "var(--black-primary)",
   color: "white",
   borderRadius: "20px",
   padding: "5px 20px",
   "&:hover": {
-    backgroundColor: "#000",
+    backgroundColor: "var(--black-color)",
   },
 }));
 
 const LinkButton = styled(Button)(({ theme }) => ({
-  color: "#333",
+  color: "var(--black-primary)",
   textTransform: "capitalize",
   "&:hover": {
-    color: "#000",
+    color: "var(--black-color)",
   },
 }));
 
@@ -51,40 +51,50 @@ function Header() {
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Link to="/">
             <LinkButton>
-              <Typography variant="body1">Ana Sayfa</Typography>
+              <span className="B-18">Ana Sayfa</span>
             </LinkButton>
           </Link>
           <Link to="/about">
             <LinkButton>
-              <Typography variant="body1">Hakkımızda</Typography>
+              <span className="B-18">Hakkımızda</span>
             </LinkButton>
           </Link>
           <Link to="/members">
             <LinkButton>
-              <Typography variant="body1">Üyelerimiz</Typography>
+              <span className="B-18">Üyelerimiz</span>
             </LinkButton>
           </Link>
           <Link to="/events">
             <LinkButton>
-              <Typography variant="body1">Etkinlikler</Typography>
+              <span className="B-18">Etkinlikler</span>
             </LinkButton>
           </Link>
           <Link to="/contact">
             <LinkButton>
-              <Typography variant="body1">İletişim</Typography>
+              <span className="B-18">İletişim</span>
             </LinkButton>
           </Link>
           <Link to="/membership">
             <LinkButton>
-              <Typography variant="body1">Üyelik</Typography>
+              <span className="B-18">Üyelik</span>
             </LinkButton>
           </Link>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <LinkButton>
-            <Typography variant="body1">Giriş Yap</Typography>
+            <span className="B-18">Giriş Yap</span>
           </LinkButton>
-          <GlassButton variant="contained">Üye Ol</GlassButton>
+          <GlassButton variant="contained">
+            <span
+              className="B-18"
+              style={{
+                color: "var(--white-color)",
+                textTransform: "capitalize",
+              }}
+            >
+              Üye Ol
+            </span>
+          </GlassButton>
         </Box>
       </Toolbar>
     </GlassAppBar>

@@ -13,7 +13,7 @@ function Members() {
   return (
     <section
       id="members"
-      style={{ backgroundColor: "#f7f7f7", height: "100%" }}
+      style={{ backgroundColor: "var(--bg-color)", height: "100%" }}
     >
       <div className="container">MEMBERS PAGE</div>
     </section>
