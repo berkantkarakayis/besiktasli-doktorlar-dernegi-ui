@@ -1,7 +1,9 @@
+// Header.tsx
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import Logo from "../../assets/images/logo.webp";
+import { Link } from "react-router-dom";
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({
   backdropFilter: "blur(10px)",
@@ -40,11 +42,6 @@ const LinkButton = styled(Button)(({ theme }) => ({
 }));
 
 function Header() {
-  const navigate = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <GlassAppBar position="fixed">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -52,24 +49,36 @@ function Header() {
           <img src={Logo} alt="Besiktasli-doktorlar-dernegi-logo" width={60} />
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <LinkButton onClick={() => navigate("home")}>
-            <Typography variant="body1">Ana Sayfa</Typography>
-          </LinkButton>
-          <LinkButton onClick={() => navigate("about")}>
-            <Typography variant="body1">Hakkımızda</Typography>
-          </LinkButton>
-          <LinkButton onClick={() => navigate("members")}>
-            <Typography variant="body1">Üyelerimiz</Typography>
-          </LinkButton>
-          <LinkButton onClick={() => navigate("events")}>
-            <Typography variant="body1">Etkinlikler</Typography>
-          </LinkButton>
-          <LinkButton onClick={() => navigate("contact")}>
-            <Typography variant="body1">İletişim</Typography>
-          </LinkButton>
-          <LinkButton onClick={() => navigate("membership")}>
-            <Typography variant="body1">Üyelik</Typography>
-          </LinkButton>
+          <Link to="/">
+            <LinkButton>
+              <Typography variant="body1">Ana Sayfa</Typography>
+            </LinkButton>
+          </Link>
+          <Link to="/about">
+            <LinkButton>
+              <Typography variant="body1">Hakkımızda</Typography>
+            </LinkButton>
+          </Link>
+          <Link to="/members">
+            <LinkButton>
+              <Typography variant="body1">Üyelerimiz</Typography>
+            </LinkButton>
+          </Link>
+          <Link to="/events">
+            <LinkButton>
+              <Typography variant="body1">Etkinlikler</Typography>
+            </LinkButton>
+          </Link>
+          <Link to="/contact">
+            <LinkButton>
+              <Typography variant="body1">İletişim</Typography>
+            </LinkButton>
+          </Link>
+          <Link to="/membership">
+            <LinkButton>
+              <Typography variant="body1">Üyelik</Typography>
+            </LinkButton>
+          </Link>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <LinkButton>

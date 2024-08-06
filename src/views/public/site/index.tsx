@@ -1,3 +1,4 @@
+// SiteLayout.tsx
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Contact from "./contact";
@@ -11,9 +12,12 @@ function SiteLayout() {
   return (
     <>
       <Header />
-      <Home />
-      <About />
-      <Members />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </>
   );
