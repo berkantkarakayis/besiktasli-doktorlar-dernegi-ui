@@ -185,10 +185,10 @@ const About = () => {
                   sx={{ width: 150, height: 150, margin: "0 auto" }}
                 />
                 <CardContent>
-                  <Typography variant="h6">{boardOfDirectors.name}</Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    {boardOfDirectors.position}
-                  </Typography>
+                  <Stack spacing={1} alignItems="center">
+                    <span className="H-24">{boardOfDirectors.name}</span>
+                    <span className="B-18">{boardOfDirectors.position}</span>
+                  </Stack>
                   <Box mt={2}>
                     <IconButton>
                       <LinkedInIcon />
