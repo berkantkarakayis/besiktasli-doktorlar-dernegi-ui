@@ -53,6 +53,26 @@ const CityBox = styled(Box)(({ theme }) => ({
 
 const MembersPerPage = 12;
 
+const turkishCharMap: Record<string, string> = {
+  ç: "c",
+  Ç: "C",
+  ğ: "g",
+  Ğ: "G",
+  ı: "i",
+  I: "I",
+  İ: "I",
+  ö: "o",
+  Ö: "O",
+  ş: "s",
+  Ş: "S",
+  ü: "u",
+  Ü: "U",
+};
+
+const replaceTurkishChars = (str: string): string => {
+  return str.replace(/[çÇğĞıİöÖşŞüÜ]/g, (char: string) => turkishCharMap[char]);
+};
+
 const Members = () => {
   const [page, setPage] = useState(1);
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
@@ -87,7 +107,9 @@ const Members = () => {
         selectedCities.length === 0 || selectedCities.includes(member.city)
     )
     .filter((member) =>
-      member.name.toLowerCase().includes(searchTerm.toLowerCase())
+      replaceTurkishChars(member.name.toLowerCase()).includes(
+        replaceTurkishChars(searchTerm.toLowerCase())
+      )
     );
 
   const paginatedMembers = filteredMembers.slice(
@@ -124,6 +146,21 @@ const Members = () => {
                 return selected.join(", ");
               }}
               fullWidth
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "black",
+                  },
+                },
+                "& .MuiMenuItem-root": {
+                  "&:hover": {
+                    backgroundColor: "grey",
+                  },
+                  "&.Mui-selected, &.Mui-selected:hover": {
+                    backgroundColor: "grey",
+                  },
+                },
+              }}
             >
               {availableCities.map((city) => (
                 <MenuItem key={city.name} value={city.name}>
@@ -140,6 +177,18 @@ const Members = () => {
               variant="outlined"
               value={searchTerm}
               onChange={handleSearchChange}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "black",
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  "&.Mui-focused": {
+                    color: "#000",
+                  },
+                },
+              }}
             />
           </Grid>
         </Grid>
