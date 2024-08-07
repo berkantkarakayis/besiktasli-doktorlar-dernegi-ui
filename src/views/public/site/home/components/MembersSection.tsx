@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import Doctor3 from "../../../../../assets/images/doctor3.png";
-import members from "../../../../../data/members.json";
+import { members } from "../../../../../data/Data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const TitleSection = styled(Box)(({ theme }) => ({
@@ -88,7 +88,7 @@ function MembersSection() {
           }}
         >
           <span className="B-18" style={{ color: "var(--white-color)" }}>
-            Bütün Kurucu Üyeleri Gör
+            Tümünü Gör
           </span>
         </Button>
       </div>

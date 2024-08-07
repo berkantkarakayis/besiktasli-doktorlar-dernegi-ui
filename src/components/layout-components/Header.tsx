@@ -13,7 +13,7 @@ const GlassAppBar = styled(AppBar)(({ theme }) => ({
   top: 0,
   left: 0,
   right: 0,
-  margin: "10px auto",
+  margin: "0px auto",
   zIndex: 99,
   borderRadius: "50px",
   padding: "5px 20px",
