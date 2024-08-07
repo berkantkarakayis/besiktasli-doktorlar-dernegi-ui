@@ -10,6 +10,9 @@ import {
   Pagination,
   Select,
   MenuItem,
+  Checkbox,
+  ListItemText,
+  TextField,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -52,9 +55,10 @@ const MembersPerPage = 12;
 
 const Members = () => {
   const [page, setPage] = useState(1);
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const memberCities = new Set(members.map((member) => member.city));
   const availableCities = cities.filter((city) => memberCities.has(city.name));
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,
@@ -64,13 +68,27 @@ const Members = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleCityChange = (event: SelectChangeEvent) => {
-    setSelectedCity(event.target.value as string);
+  const handleCityChange = (
+    event: SelectChangeEvent<typeof selectedCities>
+  ) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedCities(typeof value === "string" ? value.split(",") : value);
   };
 
-  const filteredMembers = members.filter(
-    (member) => selectedCity === "" || member.city === selectedCity
-  );
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredMembers = members
+    .filter(
+      (member) =>
+        selectedCities.length === 0 || selectedCities.includes(member.city)
+    )
+    .filter((member) =>
+      member.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   const paginatedMembers = filteredMembers.slice(
     (page - 1) * MembersPerPage,
@@ -93,22 +111,36 @@ const Members = () => {
           <span className="H-44-56-700">Üyelerimiz</span>
         </TitleSection>
         <Grid container spacing={4}>
-          <Grid item xs={12} my={4}>
+          <Grid item xs={6} my={4}>
             <Select
-              value={selectedCity}
+              multiple
+              value={selectedCities}
               onChange={handleCityChange}
               displayEmpty
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <em>Tüm Şehirler</em>;
+                }
+                return selected.join(", ");
+              }}
               fullWidth
             >
-              <MenuItem value="">
-                <em>Tüm Şehirler</em>
-              </MenuItem>
               {availableCities.map((city) => (
                 <MenuItem key={city.name} value={city.name}>
-                  {city.name}
+                  <Checkbox checked={selectedCities.indexOf(city.name) > -1} />
+                  <ListItemText primary={city.name} />
                 </MenuItem>
               ))}
             </Select>
+          </Grid>
+          <Grid item xs={6} my={4}>
+            <TextField
+              fullWidth
+              label="Üye ara"
+              variant="outlined"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
           </Grid>
         </Grid>
         <Grid container spacing={4}>
