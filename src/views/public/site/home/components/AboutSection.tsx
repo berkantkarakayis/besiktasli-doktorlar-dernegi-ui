@@ -70,7 +70,7 @@ function AboutSection() {
 
   return (
     <section
-      id="about"
+      id="about-section"
       style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
     >
       <div className="container">

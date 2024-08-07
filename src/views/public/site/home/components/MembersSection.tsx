@@ -33,7 +33,7 @@ function MembersSection() {
   return (
     <section
       id="members"
-      style={{ backgroundColor: "var(--bg-color)", height: "100%" }}
+      style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
     >
       <div className="container">
         <TitleSection>

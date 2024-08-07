@@ -1,6 +1,7 @@
 import Event1 from "../assets/images/event1.webp";
 import Event2 from "../assets/images/event2.webp";
 import Event3 from "../assets/images/event3.webp";
+import Doctor3 from "../assets/images/doctor3.png";
 
 export const events = [
   {
@@ -352,5 +353,43 @@ export const members = [
     name: "Doç. Dr. Yiğit CANGA",
     role: "Florans Nightingale Ataşehir Hastanesi Kardiyoloji Uzmanı",
     img: "/path/to/image25.jpg",
+  },
+];
+
+export const boardOfDirectors = [
+  {
+    name: "Dr. Ali KILIÇ",
+    position: "Yönetim Kurulu Başkanı",
+    image: Doctor3,
+  },
+  {
+    name: "Uzm. Dr. Yavuz GÜVEN",
+    position: "Yönetim Kurulu Başkan Yardımcısı",
+    image: Doctor3,
+  },
+  {
+    name: "Doç. Dr. Aytaç ŞAHİN",
+    position: "Genel Sekreter",
+    image: Doctor3,
+  },
+  {
+    name: "Uzm. Dr. Mehmet AYDOĞAN",
+    position: "Yönetim Kurulu Üyesi",
+    image: Doctor3,
+  },
+  {
+    name: "Uzm. Dr. Mahmut SERT",
+    position: "Yönetim Kurulu Üyesi",
+    image: Doctor3,
+  },
+  {
+    name: "Prof. Dr. Salih BOĞA",
+    position: "Yönetim Kurulu Üyesi",
+    image: Doctor3,
+  },
+  {
+    name: "Prof. Dr. Abdullah Emre YILDIRIM",
+    position: "Yönetim Kurulu Üyesi",
+    image: Doctor3,
   },
 ];

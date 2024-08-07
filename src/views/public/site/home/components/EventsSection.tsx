@@ -81,7 +81,7 @@ function EventsSection() {
   return (
     <section
       id="events"
-      style={{ backgroundColor: "var(--bg-color)", height: "100%" }}
+      style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
     >
       <div className="container">
         <TitleSection>
