@@ -64,7 +64,7 @@ function Header() {
               <span className="B-18">Üyelerimiz</span>
             </LinkButton>
           </Link>
-          <Link to="/events">
+          <Link to="/etkinlikler">
             <LinkButton>
               <span className="B-18">Etkinlikler</span>
             </LinkButton>

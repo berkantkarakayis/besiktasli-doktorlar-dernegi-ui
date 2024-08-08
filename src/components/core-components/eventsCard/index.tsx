@@ -59,7 +59,7 @@ const EventCardComponent: React.FC<EventCardProps> = ({
   handleClick,
 }) => (
   <EventCard>
-    <Link to={`/events/${slugify(event.title)}`}>
+    <Link to={`/etkinlikler/${event.id}/${slugify(event.title)}`}>
       <CardMedia
         component="img"
         height="200"
@@ -70,7 +70,8 @@ const EventCardComponent: React.FC<EventCardProps> = ({
     <EventCardContent>
       <Stack spacing={1} flexGrow={1}>
         <span className="B-16">{event.date}</span>
-        <Link to={`/events/${slugify(event.title)}`}>
+        <Link to={`/etkinlikler/${event.id}/${slugify(event.title)}`}>
+          {" "}
           <span className="B-20-20-600">{event.title}</span>
         </Link>
         <Description variant="body2" color="textSecondary">
@@ -83,7 +84,8 @@ const EventCardComponent: React.FC<EventCardProps> = ({
         alignItems="center"
         mt={2}
       >
-        <Link to={`/events/${slugify(event.title)}`}>
+        <Link to={`/etkinlikler/${event.id}/${slugify(event.title)}`}>
+          {" "}
           <Button
             variant="text"
             style={{

@@ -19,8 +19,13 @@ export const events = [
     date: "18 Mayıs 2024",
     image: Event2,
     link: "#",
-    description:
-      "Beşiktaşlı Tıbbiyelilerimiz ile futbol takımımızı 2023-2024 sezonunun son iç saha maçında güzel bir organizasyon ile hep birlikte uğurladık. Çok zor geçen bir sezonun sonunda verilen bu güzel görüntü, camiamızın geleceği adına hepimizi umutlandırmıştır. Derneğimizin kurucu üyelerinden Uzm. Dr. Hicabi GÖKDERELİ hekim arkadaşlarımızı locasında ağırlayarak, derneğimize desteklerini her zaman olduğu gibi hissettirmiştir. Kendisine teşekkürlerimizi sunarız. Camiamızın zor günler geçirdiği bu dönemde dernek üyelerimizin tutkusu ve enerjisi, gelecekte çok daha güzel organizasyonlar yapacağımızın göstergesi olmuştur. Katılımlarından ötürü tüm üyelerimize teşekkür ederiz. Doç. Dr. Aytaç ŞAHİN Beşiktaşlı Tıbbiyeliler Derneği Genel Sekreteri",
+    description: [
+      "<p>Beşiktaşlı Tıbbiyelilerimiz ile futbol takımımızı 2023-2024 sezonunun son iç saha maçında güzel bir organizasyon ile hep birlikte uğurladık.</p>",
+      "<p>Çok zor geçen bir sezonun sonunda verilen bu güzel görüntü, camiamızın geleceği adına hepimizi umutlandırmıştır.</p>",
+      "<p>Derneğimizin kurucu üyelerinden Uzm. Dr. Hicabi GÖKDERELİ hekim arkadaşlarımızı locasında ağırlayarak, derneğimize desteklerini her zaman olduğu gibi hissettirmiştir. Kendisine teşekkürlerimizi sunarız. Camiamızın zor günler geçirdiği bu dönemde dernek üyelerimizin tutkusu ve enerjisi, gelecekte çok daha güzel organizasyonlar yapacağımızın göstergesi olmuştur. Katılımlarından ötürü tüm üyelerimize teşekkür ederiz.</p>",
+      "<p>Doç. Dr. Aytaç ŞAHİN</p>",
+      "<p>Beşiktaşlı Tıbbiyeliler Derneği Genel Sekreteri</p>",
+    ],
   },
   {
     id: 3,

@@ -53,13 +53,17 @@ function MemberDetail() {
         <Grid container spacing={4} mt={1}>
           <Grid item xs={12}>
             <Breadcrumbs aria-label="breadcrumb">
-              <Link color="inherit" to="/">
-                Ana Sayfa
+              <Link to="/">
+                <span className="B-18" style={{ color: "var(--gray-color)" }}>
+                  Ana Sayfa
+                </span>
               </Link>
-              <Link color="inherit" to="/members">
-                Üyelerimiz
+              <Link to="/members">
+                <span className="B-18" style={{ color: "var(--gray-color)" }}>
+                  Üyelerimiz
+                </span>
               </Link>
-              <Typography color="text.primary">{member.name}</Typography>
+              <span className="B-18">{member.name}</span>
             </Breadcrumbs>
           </Grid>
 

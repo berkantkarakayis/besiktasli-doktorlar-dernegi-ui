@@ -40,7 +40,7 @@ function EventsSection() {
             </Grid>
           ))}
         </Grid>
-        <Link to={`/events`}>
+        <Link to={`/etkinlikler`}>
           <Button
             variant="contained"
             endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
