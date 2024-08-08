@@ -5,25 +5,33 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import MailIcon from "@mui/icons-material/Mail";
 
 function Contact() {
   const contactInfo = [
     {
-      icon: <PhoneIcon sx={{ width: "60px", height: "60px" }} />,
+      icon: <PhoneIcon sx={{ width: "40px", height: "40px" }} />,
       text: "+90 506 199 95 12",
       onClick: () => {
         window.location.href = "tel:+905061999512";
       },
     },
     {
-      icon: <WhatsAppIcon sx={{ width: "60px", height: "60px" }} />,
+      icon: <MailIcon sx={{ width: "40px", height: "40px" }} />,
+      text: "info@besiktaslitibbiyeliler.org",
+      onClick: () => {
+        window.location.href = "mailto:info@besiktaslitibbiyeliler.org";
+      },
+    },
+    {
+      icon: <WhatsAppIcon sx={{ width: "40px", height: "40px" }} />,
       text: "+90 506 199 95 12",
       onClick: () => {
         window.location.href = "https://wa.me/905061999512";
       },
     },
     {
-      icon: <LocationOnIcon sx={{ width: "60px", height: "60px" }} />,
+      icon: <LocationOnIcon sx={{ width: "40px", height: "40px" }} />,
       text: "Dikilitaş, Beste Sokak No:5, Beşiktaş/İstanbul",
       onClick: () => {
         window.open(
@@ -33,7 +41,7 @@ function Contact() {
       },
     },
     {
-      icon: <AccessTimeIcon sx={{ width: "60px", height: "60px" }} />,
+      icon: <AccessTimeIcon sx={{ width: "40px", height: "40px" }} />,
       text: "Pazartesi - Cuma: 09:00 - 18:00",
     },
   ];

@@ -42,6 +42,7 @@ const Footer = () => {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     address
   )}`;
+  const mail = "mailto:info@besiktaslitibbiyeliler.org";
 
   return (
     <FooterWrapper>
@@ -114,18 +115,14 @@ const Footer = () => {
                     className="B-16"
                     style={{ color: "var(--white-color)" }}
                   >
-                    Dikilitaş, Beste Sokak No:5, Beşiktaş/İstanbul
+                    <span
+                      className="B-16"
+                      style={{ color: "var(--white-color)" }}
+                    >
+                      Dikilitaş, Beste Sokak No:5, Beşiktaş/İstanbul
+                    </span>
                   </Link>
                 </Stack>
-                {/* <Stack direction={"row"} spacing={1} alignItems="center" mb={1}>
-                  <EmailIcon />
-                  <span
-                    className="B-16"
-                    style={{ color: "var(--white-color)" }}
-                  >
-                    info@example.com
-                  </span>
-                </Stack> */}
                 <Stack direction={"row"} spacing={1} alignItems="center" mb={1}>
                   <PhoneIcon />
                   <Link
@@ -133,7 +130,27 @@ const Footer = () => {
                     className="B-16"
                     style={{ color: "var(--white-color)" }}
                   >
-                    + 90 506 199 95 12
+                    <span
+                      className="B-16"
+                      style={{ color: "var(--white-color)" }}
+                    >
+                      + 90 506 199 95 12
+                    </span>
+                  </Link>
+                </Stack>
+                <Stack direction={"row"} spacing={1} alignItems="center" mb={1}>
+                  <EmailIcon />
+                  <Link
+                    href={mail}
+                    className="B-16"
+                    style={{ color: "var(--white-color)" }}
+                  >
+                    <span
+                      className="B-16"
+                      style={{ color: "var(--white-color)" }}
+                    >
+                      info@besiktaslitibbiyeliler.org
+                    </span>
                   </Link>
                 </Stack>
                 <Stack direction={"row"} spacing={1} alignItems="center" mb={1}>
@@ -145,7 +162,12 @@ const Footer = () => {
                     className="B-16"
                     style={{ color: "var(--white-color)" }}
                   >
-                    + 90 506 199 95 12
+                    <span
+                      className="B-16"
+                      style={{ color: "var(--white-color)" }}
+                    >
+                      + 90 506 199 95 12
+                    </span>
                   </Link>
                 </Stack>
                 <Stack direction={"row"} spacing={1} alignItems="center" mb={1}>
