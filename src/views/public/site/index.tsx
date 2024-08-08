@@ -7,6 +7,7 @@ import Footer from "../../../components/layout-components/Footer";
 import About from "./about";
 import Home from "./home";
 import Members from "./members";
+import MemberDetail from "./members/components/MemberDetail";
 
 function SiteLayout() {
   return (
@@ -16,6 +17,7 @@ function SiteLayout() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/members" element={<Members />} />
+        <Route path="/members/:id" element={<MemberDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

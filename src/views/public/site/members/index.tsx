@@ -22,6 +22,7 @@ import { members } from "../../../../data/Data";
 import { cities } from "../../../../data/Data";
 import DoctorProfilePhoto from "../../../../assets/images/doctor3.png";
 import { SelectChangeEvent } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const TitleSection = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -31,11 +32,11 @@ const TitleSection = styled(Box)(({ theme }) => ({
 const DoctorCard = styled(Card)(({ theme }) => ({
   textAlign: "center",
   borderRadius: "16px",
-  boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.15)",
+  boxShadow: "0px 4px 4px 4px rgba(0, 0, 0, 0.2)",
   transition: "transform 0.3s, box-shadow 0.3s",
   "&:hover": {
     transform: "scale(1.05)",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
+    boxShadow: "0px 4px 4px 4px rgba(0, 0, 0, 0.2)",
   },
   height: "100%",
   display: "flex",
@@ -79,6 +80,7 @@ const Members = () => {
   const memberCities = new Set(members.map((member) => member.city));
   const availableCities = cities.filter((city) => memberCities.has(city.name));
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,
@@ -198,12 +200,14 @@ const Members = () => {
               <DoctorCard>
                 <Stack>
                   <img
+                    onClick={() => navigate(`/members/${member.id}`)}
                     alt={member.name}
                     src={DoctorProfilePhoto}
                     style={{
                       width: "100%",
                       height: "300px",
                       borderRadius: "16px 16px 0 0",
+                      cursor: "pointer",
                     }}
                   />
                   <CityBox>
@@ -217,7 +221,12 @@ const Members = () => {
                 </Stack>
                 <CardContent>
                   <Stack spacing={1}>
-                    <span className="H-24">{member.name}</span>
+                    <Box
+                      onClick={() => navigate(`/members/${member.id}`)}
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <span className="H-24">{member.name}</span>
+                    </Box>
                     <span className="B-18">{member.role}</span>
                   </Stack>
                 </CardContent>

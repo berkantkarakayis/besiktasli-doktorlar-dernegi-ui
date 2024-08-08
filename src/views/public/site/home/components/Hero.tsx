@@ -30,7 +30,7 @@ const StatBox = styled(Card)(({ theme }) => ({
   padding: theme.spacing(2),
   borderRadius: "16px",
   gap: theme.spacing(2),
-  boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.15)",
+  boxShadow: "0px 4px 4px 4px rgba(0, 0, 0, 0.2)",
   backgroundColor: "rgba(255, 255, 255, 0.5)",
 }));
 
