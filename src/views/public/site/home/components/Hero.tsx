@@ -46,7 +46,6 @@ function Hero() {
       }}
     >
       <div className="container">
-        {/* Hero Section */}
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={2}
@@ -89,8 +88,6 @@ function Hero() {
             />
           </HeroSection>
         </Stack>
-
-        {/* Feature Section */}
         <FeatureSection>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={4}>

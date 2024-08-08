@@ -7,7 +7,6 @@ import {
   Grid,
   Stack,
   IconButton,
-  Container,
   Breadcrumbs,
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -28,6 +27,12 @@ const CityBox = styled(Box)(({ theme }) => ({
 function MemberDetail() {
   const { id } = useParams<{ id: string }>();
   const member = members.find((m) => m.id === Number(id));
+
+  const socialMedia = [
+    { icon: LinkedInIcon /* link: member?.linkedin */ },
+    { icon: TwitterIcon /* link: member?.twitter */ },
+    { icon: FacebookIcon /* link: member?.facebook */ },
+  ];
 
   if (!member) {
     return <div>Böyle bir üye bulunamadı</div>; // TODO - ERROR PAGE YAPILACAK
@@ -124,42 +129,24 @@ function MemberDetail() {
                 }}
               >
                 <Stack direction="row" spacing={1}>
-                  <IconButton
-                    /* href={member.linkedin} */
-                    sx={{
-                      backgroundColor: "var(--red-primary)",
-                      color: "#fff",
-                      "&:hover": {
-                        backgroundColor: "var(--red-secondary)",
-                      },
-                    }}
-                  >
-                    <LinkedInIcon />
-                  </IconButton>
-                  <IconButton
-                    /* href={member.twitter} */
-                    sx={{
-                      backgroundColor: "var(--red-primary)",
-                      color: "#fff",
-                      "&:hover": {
-                        backgroundColor: "var(--red-secondary)",
-                      },
-                    }}
-                  >
-                    <TwitterIcon />
-                  </IconButton>
-                  <IconButton
-                    /* href={member.facebook} */
-                    sx={{
-                      backgroundColor: "var(--red-primary)",
-                      color: "#fff",
-                      "&:hover": {
-                        backgroundColor: "var(--red-secondary)",
-                      },
-                    }}
-                  >
-                    <FacebookIcon />
-                  </IconButton>
+                  {socialMedia.map((media, index) => {
+                    const Icon = media.icon;
+                    return (
+                      <IconButton
+                        key={index}
+                        /* href={media.link} */
+                        sx={{
+                          backgroundColor: "var(--red-primary)",
+                          color: "#fff",
+                          "&:hover": {
+                            backgroundColor: "var(--red-secondary)",
+                          },
+                        }}
+                      >
+                        <Icon />
+                      </IconButton>
+                    );
+                  })}
                 </Stack>
               </Box>
             </Box>

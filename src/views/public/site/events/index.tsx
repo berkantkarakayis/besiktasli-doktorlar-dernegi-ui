@@ -1,19 +1,10 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
-import { styled } from "@mui/system";
+import { Grid } from "@mui/material";
 import { events } from "../../../../data/Data";
 import EventCardComponent from "../../../../components/core-components/eventsCard";
 import SnackbarComponent from "../../../../components/core-components/snackbar";
 import { SnackbarCloseReason } from "@mui/material/Snackbar";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
-
-const TitleSection = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  textAlign: "center",
-  padding: theme.spacing(4, 2),
-}));
 
 function Events() {
   const [open, setOpen] = React.useState(false);

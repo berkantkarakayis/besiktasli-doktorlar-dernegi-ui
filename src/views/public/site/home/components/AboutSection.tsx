@@ -8,14 +8,6 @@ import RespectSvg from "../../../../../assets/icons/Respect";
 import TeamworkSvg from "../../../../../assets/icons/Teamwork";
 import TitleSectionComponent from "../../../../../components/core-components/titleSection";
 
-const TitleSection = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  textAlign: "center",
-  padding: theme.spacing(4, 2),
-}));
-
 const FeatureSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2, 2),
   height: "512px",
@@ -76,8 +68,6 @@ function AboutSection() {
     >
       <div className="container">
         <TitleSectionComponent titleText="Hakkımızda" />
-
-        {/* Feature Section */}
         <FeatureSection>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={4}>
@@ -100,16 +90,14 @@ function AboutSection() {
                     <Stack spacing={1}>
                       <li>
                         <Stack spacing={1}>
-                          <span style={{ fontWeight: 700 }}>
-                            Dr. Ali KILIÇ{" "}
-                          </span>
+                          <span style={{ fontWeight: 700 }}>Dr. Ali KILIÇ</span>
                           Yönetim Kurulu Başkanı
                         </Stack>
                       </li>
                       <li>
                         <Stack spacing={1}>
                           <span style={{ fontWeight: 700 }}>
-                            Uzm. Dr. Yavuz GÜVEN{" "}
+                            Uzm. Dr. Yavuz GÜVEN
                           </span>
                           Yönetim Kurulu Başkan Yardımcısı
                         </Stack>

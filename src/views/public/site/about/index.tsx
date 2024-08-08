@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Typography,
   Grid,
   Card,
   CardContent,
@@ -19,11 +18,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import doctorImage from "../../../../assets/images/aboutpagephoto.jpeg";
 import { boardOfDirectors } from "../../../../data/Data";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
-
-const TitleSection = styled(Box)(({ theme }) => ({
-  textAlign: "center",
-  padding: theme.spacing(2, 2),
-}));
 
 const IconBox = styled(Box)(({ theme }) => ({
   backgroundColor: "var(--red-primary)",
