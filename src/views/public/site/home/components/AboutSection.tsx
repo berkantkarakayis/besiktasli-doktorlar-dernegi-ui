@@ -6,6 +6,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import CompassionSvg from "../../../../../assets/icons/Compassion";
 import RespectSvg from "../../../../../assets/icons/Respect";
 import TeamworkSvg from "../../../../../assets/icons/Teamwork";
+import TitleSectionComponent from "../../../../../components/core-components/titleSection";
 
 const TitleSection = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -74,9 +75,7 @@ function AboutSection() {
       style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
     >
       <div className="container">
-        <TitleSection>
-          <span className="H-44-56-700">Hakkımızda</span>
-        </TitleSection>
+        <TitleSectionComponent titleText="Hakkımızda" />
 
         {/* Feature Section */}
         <FeatureSection>

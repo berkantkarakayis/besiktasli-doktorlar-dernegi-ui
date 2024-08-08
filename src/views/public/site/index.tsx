@@ -8,6 +8,7 @@ import About from "./about";
 import Home from "./home";
 import Members from "./members";
 import MemberDetail from "./members/components/MemberDetail";
+import Events from "./events";
 
 function SiteLayout() {
   return (
@@ -19,6 +20,7 @@ function SiteLayout() {
         <Route path="/members" element={<Members />} />
         <Route path="/members/:id" element={<MemberDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
       <Footer />
     </>

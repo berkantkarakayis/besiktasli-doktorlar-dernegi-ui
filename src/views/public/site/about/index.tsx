@@ -18,6 +18,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import doctorImage from "../../../../assets/images/aboutpagephoto.jpeg";
 import { boardOfDirectors } from "../../../../data/Data";
+import TitleSectionComponent from "../../../../components/core-components/titleSection";
 
 const TitleSection = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -59,9 +60,7 @@ const About = () => {
       }}
     >
       <div className="container">
-        <TitleSection>
-          <span className="H-44-56-700">Hakkımızda</span>
-        </TitleSection>
+        <TitleSectionComponent titleText="Hakkımızda" />
 
         <Grid container spacing={4} alignItems="center" pt={2}>
           <Grid item xs={12} md={4}>
@@ -171,9 +170,7 @@ const About = () => {
           </Grid>
         </Grid>
 
-        <TitleSection mt={10}>
-          <span className="H-44-56-700">Yönetim Kurulumuz</span>
-        </TitleSection>
+        <TitleSectionComponent mt={10} titleText="Yönetim Kurulumuz" />
 
         <Grid container spacing={4}>
           {boardOfDirectors.map((boardOfDirectors, index) => (

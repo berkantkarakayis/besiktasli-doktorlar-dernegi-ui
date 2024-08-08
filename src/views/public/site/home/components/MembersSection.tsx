@@ -9,6 +9,7 @@ import "swiper/css/autoplay";
 import Doctor3 from "../../../../../assets/images/doctor3.png";
 import { members } from "../../../../../data/Data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import TitleSectionComponent from "../../../../../components/core-components/titleSection";
 
 const TitleSection = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -36,9 +37,8 @@ function MembersSection() {
       style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
     >
       <div className="container">
-        <TitleSection>
-          <span className="H-44-56-700">Üyelerimiz</span>
-        </TitleSection>
+        <TitleSectionComponent titleText="Üyelerimiz" />
+
         <Swiper
           modules={[Autoplay, Navigation]}
           spaceBetween={20}

@@ -23,6 +23,7 @@ import { cities } from "../../../../data/Data";
 import DoctorProfilePhoto from "../../../../assets/images/doctor3.png";
 import { SelectChangeEvent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import TitleSectionComponent from "../../../../components/core-components/titleSection";
 
 const TitleSection = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -82,14 +83,6 @@ const Members = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  const handleChangePage = (
-    event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setPage(value);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const handleCityChange = (
     event: SelectChangeEvent<typeof selectedCities>
   ) => {
@@ -114,6 +107,14 @@ const Members = () => {
       )
     );
 
+  const handleChangePage = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
+    setPage(value);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const paginatedMembers = filteredMembers.slice(
     (page - 1) * MembersPerPage,
     page * MembersPerPage
@@ -131,9 +132,8 @@ const Members = () => {
       }}
     >
       <div className="container">
-        <TitleSection>
-          <span className="H-44-56-700">Üyelerimiz</span>
-        </TitleSection>
+        <TitleSectionComponent titleText="Üyelerimiz" />
+
         <Grid container spacing={4}>
           <Grid item xs={6} my={4}>
             <Select
