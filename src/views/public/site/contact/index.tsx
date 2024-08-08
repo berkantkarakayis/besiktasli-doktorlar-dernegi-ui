@@ -4,6 +4,7 @@ import TitleSectionComponent from "../../../../components/core-components/titleS
 import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 function Contact() {
   const contactInfo = [
@@ -31,6 +32,10 @@ function Contact() {
         );
       },
     },
+    {
+      icon: <AccessTimeIcon sx={{ width: "60px", height: "60px" }} />,
+      text: "Pazartesi - Cuma: 09:00 - 18:00",
+    },
   ];
 
   return (
@@ -46,7 +51,7 @@ function Contact() {
         <TitleSectionComponent titleText="İletişim" />
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Grid container direction="column" spacing={6}>
+            <Grid container direction="column" spacing={3}>
               {contactInfo.map((info, index) => (
                 <Grid item xs={12} key={index}>
                   <Card
