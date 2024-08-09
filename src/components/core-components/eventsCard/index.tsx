@@ -74,9 +74,15 @@ const EventCardComponent: React.FC<EventCardProps> = ({
           {" "}
           <span className="B-20-20-600">{event.title}</span>
         </Link>
-        <Description variant="body2" color="textSecondary">
-          {event.description}
-        </Description>
+        <Description
+          variant="body2"
+          color="textSecondary"
+          dangerouslySetInnerHTML={{
+            __html: Array.isArray(event.description)
+              ? event.description.join(" ")
+              : event.description,
+          }}
+        />
       </Stack>
       <Box
         display="flex"
