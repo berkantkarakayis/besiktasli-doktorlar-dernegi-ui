@@ -10,6 +10,7 @@ import Members from "./members";
 import MemberDetail from "./members/components/MemberDetail";
 import Events from "./events";
 import EventDetail from "./events/components/EventDetail";
+import Membership from "./membership";
 
 function SiteLayout() {
   return (
@@ -17,12 +18,13 @@ function SiteLayout() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/members" element={<Members />} />
-        <Route path="/members/:id" element={<MemberDetail />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/hakkimizda" element={<About />} />
+        <Route path="/uyeler" element={<Members />} />
+        <Route path="/uyeler/:id/:name" element={<MemberDetail />} />
+        <Route path="/iletisim" element={<Contact />} />
         <Route path="/etkinlikler" element={<Events />} />
         <Route path="/etkinlikler/:id/:title" element={<EventDetail />} />
+        <Route path="/uyelik" element={<Membership />} />
       </Routes>
       <Footer />
     </>

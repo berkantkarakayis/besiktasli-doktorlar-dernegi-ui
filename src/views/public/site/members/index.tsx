@@ -25,11 +25,6 @@ import { SelectChangeEvent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
 
-const TitleSection = styled(Box)(({ theme }) => ({
-  textAlign: "center",
-  padding: theme.spacing(2, 2),
-}));
-
 const DoctorCard = styled(Card)(({ theme }) => ({
   textAlign: "center",
   borderRadius: "16px",
@@ -200,7 +195,9 @@ const Members = () => {
               <DoctorCard>
                 <Stack>
                   <img
-                    onClick={() => navigate(`/members/${member.id}`)}
+                    onClick={() =>
+                      navigate(`/uyeler/${member.id}/${member.name}`)
+                    }
                     alt={member.name}
                     src={DoctorProfilePhoto}
                     style={{
@@ -222,7 +219,9 @@ const Members = () => {
                 <CardContent>
                   <Stack spacing={1}>
                     <Box
-                      onClick={() => navigate(`/members/${member.id}`)}
+                      onClick={() =>
+                        navigate(`/uyeler/${member.id}/${member.name}`)
+                      }
                       sx={{ cursor: "pointer" }}
                     >
                       <span className="H-24">{member.name}</span>

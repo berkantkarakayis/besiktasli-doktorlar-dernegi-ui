@@ -54,12 +54,12 @@ function Header() {
               <span className="B-18">Ana Sayfa</span>
             </LinkButton>
           </Link>
-          <Link to="/about">
+          <Link to="/hakkimizda">
             <LinkButton>
               <span className="B-18">Hakkımızda</span>
             </LinkButton>
           </Link>
-          <Link to="/members">
+          <Link to="/uyeler">
             <LinkButton>
               <span className="B-18">Üyelerimiz</span>
             </LinkButton>
@@ -69,12 +69,12 @@ function Header() {
               <span className="B-18">Etkinlikler</span>
             </LinkButton>
           </Link>
-          <Link to="/contact">
+          <Link to="/iletisim">
             <LinkButton>
               <span className="B-18">İletişim</span>
             </LinkButton>
           </Link>
-          <Link to="/membership">
+          <Link to="/uyelik">
             <LinkButton>
               <span className="B-18">Üyelik</span>
             </LinkButton>

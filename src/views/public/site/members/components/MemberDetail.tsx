@@ -58,7 +58,7 @@ function MemberDetail() {
                   Ana Sayfa
                 </span>
               </Link>
-              <Link to="/members">
+              <Link to="/uyeler">
                 <span className="B-18" style={{ color: "var(--gray-color)" }}>
                   Üyelerimiz
                 </span>
