@@ -11,7 +11,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/logo.png";
 
 const FooterWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "var(--black-primary)",

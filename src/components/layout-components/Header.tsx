@@ -2,7 +2,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { styled } from "@mui/system";
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({

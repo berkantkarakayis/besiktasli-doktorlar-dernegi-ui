@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Avatar, Grid, AvatarGroup, Stack, Card } from "@mui/material";
 import { styled } from "@mui/system";
-import Logo from "../../../../../assets/images/logo.webp";
+import Logo from "../../../../../assets/images/logo.png";
 import BgImage from "../../../../../assets/images/hero_bg12.jpeg";
 
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -82,8 +82,8 @@ function Hero() {
               src={Logo}
               alt="Hero"
               style={{
-                width: "400px",
-                height: "400px",
+                width: "350px",
+                height: "380px",
               }}
             />
           </HeroSection>

@@ -6,9 +6,10 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import Doctor3 from "../../../../../assets/images/doctor3.png";
 import { members } from "../../../../../data/Data";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import MaleProfilePhoto from "../../../../../assets/images/male-doc.png";
+import FemaleProfilePhoto from "../../../../../assets/images/female-doc.webp";
 import TitleSectionComponent from "../../../../../components/core-components/titleSection";
 
 const MemberCard = styled(Card)(({ theme }) => ({
@@ -46,7 +47,12 @@ function MembersSection() {
               <MemberCard>
                 <img
                   /* src={member.img} */
-                  src={Doctor3}
+                  src={
+                    member.img ||
+                    (member.gender === "male"
+                      ? MaleProfilePhoto
+                      : FemaleProfilePhoto)
+                  }
                   alt={member.name}
                   style={{
                     width: "100%",
