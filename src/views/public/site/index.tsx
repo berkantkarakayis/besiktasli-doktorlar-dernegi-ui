@@ -11,11 +11,16 @@ import MemberDetail from "./members/components/MemberDetail";
 import Events from "./events";
 import EventDetail from "./events/components/EventDetail";
 import Membership from "./membership";
+import { useMediaQuery, useTheme } from "@mui/material";
+import MobileHeader from "../../../components/layout-components/MobileHeader";
 
 function SiteLayout() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
-      <Header />
+      {!isMobile ? <Header /> : <MobileHeader />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<About />} />
