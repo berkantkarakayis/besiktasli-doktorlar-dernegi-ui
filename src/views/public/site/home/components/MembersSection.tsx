@@ -25,72 +25,67 @@ const MemberCard = styled(Card)(({ theme }) => ({
 
 function MembersSection() {
   return (
-    <section
-      id="members"
-      style={{ backgroundColor: "var(--bg-color)", height: "100vh" }}
-    >
-      <div className="container">
-        <TitleSectionComponent titleText="Üyelerimiz" />
+    <>
+      <TitleSectionComponent titleText="Üyelerimiz" />
 
-        <Swiper
-          modules={[Autoplay, Navigation]}
-          spaceBetween={20}
-          slidesPerView={4}
-          navigation
-          scrollbar={{ draggable: true }}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
-          loop={true}
-          freeMode={true}
-        >
-          {members.map((member, index) => (
-            <SwiperSlide key={index}>
-              <MemberCard>
-                <img
-                  /* src={member.img} */
-                  src={
-                    member.img ||
-                    (member.gender === "male"
-                      ? MaleProfilePhoto
-                      : FemaleProfilePhoto)
-                  }
-                  alt={member.name}
-                  style={{
-                    width: "100%",
-                    height: "295px",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Stack spacing={1} mt={1}>
-                  <span className="B-18" style={{ fontWeight: 700 }}>
-                    {member.name}
-                  </span>
-                  <span className="B-18">{member.role}</span>
-                </Stack>
-              </MemberCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <Button
-          variant="contained"
-          endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
-          sx={{
-            mt: 4,
-            width: "100%",
-            backgroundColor: "var(--black-primary)",
-            color: "var(--white-color)",
-            borderRadius: "20px",
-            padding: "5px 20px",
-            height: "50px",
-            textTransform: "capitalize",
-            "&:hover": { backgroundColor: "var(--black-color)" },
-          }}
-        >
-          <span className="B-18" style={{ color: "var(--white-color)" }}>
-            Tümünü Gör
-          </span>
-        </Button>
-      </div>
-    </section>
+      <Swiper
+        modules={[Autoplay, Navigation]}
+        spaceBetween={20}
+        slidesPerView={4}
+        navigation
+        scrollbar={{ draggable: true }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        loop={true}
+        freeMode={true}
+      >
+        {members.map((member, index) => (
+          <SwiperSlide key={index}>
+            <MemberCard>
+              <img
+                /* src={member.img} */
+                src={
+                  member.img ||
+                  (member.gender === "male"
+                    ? MaleProfilePhoto
+                    : FemaleProfilePhoto)
+                }
+                alt={member.name}
+                style={{
+                  width: "100%",
+                  height: "295px",
+                  borderRadius: "8px",
+                }}
+              />
+              <Stack spacing={1} mt={1}>
+                <span className="B-18" style={{ fontWeight: 700 }}>
+                  {member.name}
+                </span>
+                <span className="B-18">{member.role}</span>
+              </Stack>
+            </MemberCard>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <Button
+        variant="contained"
+        endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
+        sx={{
+          mt: 4,
+          width: "100%",
+          backgroundColor: "var(--black-primary)",
+          color: "var(--white-color)",
+          borderRadius: "20px",
+          padding: "5px 20px",
+          height: "50px",
+          textTransform: "capitalize",
+          "&:hover": { backgroundColor: "var(--black-color)" },
+        }}
+      >
+        <span className="B-18" style={{ color: "var(--white-color)" }}>
+          Tümünü Gör
+        </span>
+      </Button>
+    </>
   );
 }
 
