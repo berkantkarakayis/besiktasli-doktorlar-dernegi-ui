@@ -13,6 +13,8 @@ import {
   Checkbox,
   ListItemText,
   TextField,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -73,6 +75,8 @@ const replaceTurkishChars = (str: string): string => {
 };
 
 const Members = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [page, setPage] = useState(1);
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [selectedExpertises, setSelectedExpertises] = useState<string[]>([]);
@@ -145,15 +149,13 @@ const Members = () => {
         backgroundColor: "var(--bg-color)",
         height: "100%",
         paddingBottom: "100px",
-        paddingLeft: "50px",
-        paddingRight: "50px",
       }}
     >
       <div className="container">
         <TitleSectionComponent titleText="Üyelerimiz" />
 
-        <Grid container spacing={4}>
-          <Grid item xs={4} my={4}>
+        <Grid container spacing={4} mb={isMobile ? 4 : 0}>
+          <Grid item xs={isMobile ? 12 : 4} my={isMobile ? 0 : 4}>
             <Select
               multiple
               value={selectedCities}
@@ -190,7 +192,7 @@ const Members = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={4} my={4}>
+          <Grid item xs={isMobile ? 12 : 4} my={isMobile ? 0 : 4}>
             <Select
               multiple
               value={selectedExpertises}
@@ -229,7 +231,7 @@ const Members = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={4} my={4}>
+          <Grid item xs={isMobile ? 12 : 4} my={isMobile ? 0 : 4}>
             <TextField
               fullWidth
               label="Üye ara"

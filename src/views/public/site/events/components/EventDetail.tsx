@@ -5,6 +5,8 @@ import {
   IconButton,
   Stack,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
@@ -16,6 +18,8 @@ import XIcon from "@mui/icons-material/X";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 function EventDetail() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { id } = useParams<{ id: string }>();
   const event = events.find((event) => event.id === Number(id));
 
@@ -39,8 +43,6 @@ function EventDetail() {
         backgroundColor: "var(--bg-color)",
         minHeight: "100vh",
         paddingBottom: "100px",
-        paddingLeft: "50px",
-        paddingRight: "50px",
       }}
     >
       <div className="container">
@@ -66,10 +68,10 @@ function EventDetail() {
               textAlign="left"
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={6} md={6} alignContent={"center"}>
             <span className="B-16">{event?.date}</span>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={6} md={6}>
             <Stack direction={"row"} justifyContent={"flex-end"}>
               <IconButton
                 aria-label="LinkedIn"
