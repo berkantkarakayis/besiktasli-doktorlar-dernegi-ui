@@ -255,7 +255,7 @@ const Members = () => {
         </Grid>
         <Grid container spacing={4}>
           {paginatedMembers.map((member, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={3} key={index}>
               <DoctorCard>
                 <Stack>
                   <img
