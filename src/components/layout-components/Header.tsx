@@ -1,17 +1,7 @@
+// Header.tsx
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  useMediaQuery,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
-import { styled, useTheme } from "@mui/system";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { styled } from "@mui/system";
 import Logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -52,59 +42,44 @@ const LinkButton = styled(Button)(({ theme }) => ({
 }));
 
 function Header() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
-  const menuItems = [
-    { text: "Ana Sayfa", link: "/" },
-    { text: "Hakkımızda", link: "/hakkimizda" },
-    { text: "Üyelerimiz", link: "/uyeler" },
-    { text: "Etkinlikler", link: "/etkinlikler" },
-    { text: "İletişim", link: "/iletisim" },
-    { text: "Üyelik", link: "/uyelik" },
-  ];
-
   return (
     <GlassAppBar position="fixed">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <img src={Logo} alt="Besiktasli-doktorlar-dernegi-logo" width={60} />
+          <img src={Logo} alt="Besiktasli-doktorlar-dernegi-logo" width={40} />
         </Box>
-        {isMobile ? (
-          <>
-            <Button onClick={handleDrawerToggle}>Menu</Button>
-            <Drawer
-              anchor="right"
-              open={drawerOpen}
-              onClose={handleDrawerToggle}
-            >
-              <List>
-                {menuItems.map((item, index) => (
-                  <Link to={item.link} key={index}>
-                    <ListItem button>
-                      <ListItemText primary={item.text} />
-                    </ListItem>
-                  </Link>
-                ))}
-              </List>
-            </Drawer>
-          </>
-        ) : (
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            {menuItems.map((item, index) => (
-              <Link to={item.link} key={index}>
-                <LinkButton>
-                  <span className="B-18">{item.text}</span>
-                </LinkButton>
-              </Link>
-            ))}
-          </Box>
-        )}
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Link to="/">
+            <LinkButton>
+              <span className="B-18">Ana Sayfa</span>
+            </LinkButton>
+          </Link>
+          <Link to="/hakkimizda">
+            <LinkButton>
+              <span className="B-18">Hakkımızda</span>
+            </LinkButton>
+          </Link>
+          <Link to="/uyeler">
+            <LinkButton>
+              <span className="B-18">Üyelerimiz</span>
+            </LinkButton>
+          </Link>
+          <Link to="/etkinlikler">
+            <LinkButton>
+              <span className="B-18">Etkinlikler</span>
+            </LinkButton>
+          </Link>
+          <Link to="/iletisim">
+            <LinkButton>
+              <span className="B-18">İletişim</span>
+            </LinkButton>
+          </Link>
+          <Link to="/uyelik">
+            <LinkButton>
+              <span className="B-18">Üyelik</span>
+            </LinkButton>
+          </Link>
+        </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <LinkButton>
             <span className="B-18">Giriş Yap</span>
