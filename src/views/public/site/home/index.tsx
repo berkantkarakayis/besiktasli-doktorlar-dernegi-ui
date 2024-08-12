@@ -45,7 +45,7 @@ function Home() {
         <Hero />
         <AboutSection />
         <MembersSection />
-        {/* <EventsSection /> */}
+        <EventsSection />
       </div>
     </section>
   );

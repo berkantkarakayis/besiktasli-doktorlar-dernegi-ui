@@ -19,6 +19,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MaleProfilePhoto from "../../../../../assets/images/male-doc.png";
 import FemaleProfilePhoto from "../../../../../assets/images/female-doc.webp";
 import TitleSectionComponent from "../../../../../components/core-components/titleSection";
+import { Link } from "react-router-dom";
 
 const MemberCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -50,6 +51,7 @@ function MembersSection() {
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
         freeMode={true}
+        style={{ padding: "20px 10px" }}
       >
         {members.map((member, index) => (
           <SwiperSlide key={index}>
@@ -79,25 +81,27 @@ function MembersSection() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Button
-        variant="contained"
-        endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
-        sx={{
-          mt: 4,
-          width: "100%",
-          backgroundColor: "var(--black-primary)",
-          color: "var(--white-color)",
-          borderRadius: "20px",
-          padding: "5px 20px",
-          height: "50px",
-          textTransform: "capitalize",
-          "&:hover": { backgroundColor: "var(--black-color)" },
-        }}
-      >
-        <span className="B-18" style={{ color: "var(--white-color)" }}>
-          Tümünü Gör
-        </span>
-      </Button>
+      <Link to={`/uyeler`}>
+        <Button
+          variant="contained"
+          endIcon={<ArrowForwardIcon style={{ marginLeft: "16px" }} />}
+          sx={{
+            mt: 4,
+            width: "100%",
+            backgroundColor: "var(--black-primary)",
+            color: "var(--white-color)",
+            borderRadius: "20px",
+            padding: "5px 20px",
+            height: "50px",
+            textTransform: "capitalize",
+            "&:hover": { backgroundColor: "var(--black-color)" },
+          }}
+        >
+          <span className="B-18" style={{ color: "var(--white-color)" }}>
+            Tümünü Gör
+          </span>
+        </Button>
+      </Link>
     </Grid>
   );
 }
