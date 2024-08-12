@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Countdown from "../../../../components/core-components/countdownCard";
 import CountdownBgImage from "../../../../assets/images/countdown-bg.webp";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -8,6 +16,9 @@ import { LoadingButton } from "@mui/lab";
 import DownloadIcon from "@mui/icons-material/Download";
 
 function Membership() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const [loadingBasvuruPdf, setLoadingBasvuruPdf] = useState(false);
   const [loadingBasvuruDocx, setLoadingBasvuruDocx] = useState(false);
   const [loadingUyelik, setLoadingUyelik] = useState(false);
@@ -53,25 +64,23 @@ function Membership() {
 
   return (
     <section
-      id="events"
+      id="membership"
       style={{
         backgroundColor: "var(--bg-color)",
         height: "100%",
         paddingBottom: "100px",
-        paddingLeft: "50px",
-        paddingRight: "50px",
       }}
     >
       <div className="container">
         <TitleSectionComponent titleText="Üyelik" />
-        <Grid container spacing={4}>
+        <Grid container spacing={isMobile ? 2 : 4}>
           <Grid item xs={12}>
             <Box
               sx={{
                 position: "relative",
                 color: "#fff",
                 textAlign: "center",
-                padding: "100px 0",
+                padding: isMobile ? "50px 0" : "100px 0",
                 borderRadius: "16px",
               }}
             >
@@ -100,20 +109,20 @@ function Membership() {
                 }}
               />
               <Stack
-                spacing={4}
+                spacing={isMobile ? 2 : 4}
                 sx={{
                   position: "relative",
                   zIndex: 1,
                 }}
               >
                 <span
-                  className="H-50-54-700"
+                  className={isMobile ? "H-30-30-600" : "H-50-54-700"}
                   style={{ color: "var(--white-color)" }}
                 >
                   5.000 TL Giriş Aidatı Fırsatını Kaçırmayın
                 </span>
                 <span
-                  className="H-30-30-600"
+                  className={isMobile ? "H-24" : "H-30-30-600"}
                   style={{
                     color: "var(--white-color)",
                     maxWidth: "80%",
@@ -128,7 +137,9 @@ function Membership() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    alignContent: "center",
                     mt: 4,
+                    padding: "20px",
                   }}
                 >
                   <Countdown targetDate="2025-01-01T00:00:00" />
@@ -260,7 +271,7 @@ function Membership() {
               </Button>
             </Stack>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <TitleSectionComponent
               titleText="Gerekli Evraklar"
               textAlign="left"
@@ -293,7 +304,7 @@ function Membership() {
               </span>
             </Stack>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <TitleSectionComponent
               titleText="Hesap Bilgilerimiz"
               textAlign="left"
@@ -326,7 +337,7 @@ function Membership() {
             />
             <Stack spacing={1}>
               <Grid container spacing={1}>
-                <Grid item xs={4}>
+                <Grid item xs={isMobile ? 12 : 4}>
                   <LoadingButton
                     variant="contained"
                     loading={loadingBasvuruPdf}
@@ -349,7 +360,7 @@ function Membership() {
                     </span>
                   </LoadingButton>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={isMobile ? 12 : 4}>
                   <LoadingButton
                     variant="contained"
                     loading={loadingBasvuruDocx}
@@ -372,7 +383,7 @@ function Membership() {
                     </span>
                   </LoadingButton>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={isMobile ? 12 : 4}>
                   <LoadingButton
                     variant="contained"
                     loading={loadingUyelik}
@@ -407,27 +418,27 @@ function Membership() {
               </p>
             </Stack>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <TitleSectionComponent
               titleText="Nasıl Referans Bulabilirim?"
               textAlign="left"
             />
-            <span>
+            <p className="B-18">
               Kulübümüze üyelik için referans bulmakta zorlanan tıp ve diş
               hekimi ve bu bölümlerde okuyan öğrenci üyelerimiz için dernek
               sekreterimize ulaşmaları halinde destek olunacaktır.
-            </span>
+            </p>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={isMobile ? 12 : 6}>
             <TitleSectionComponent
               titleText="Ücret Yatırılmalı mı?"
               textAlign="left"
             />
-            <span>
+            <p className="B-18">
               11 Mayıs ta yapılan Tüzük Tadil Kongresinden sonra yapılacak
               başvurularda mail order için kredi kartı bilgileri veya ödeme
               dekontu istenilmektedir.
-            </span>
+            </p>
           </Grid>
         </Grid>
       </div>

@@ -86,7 +86,7 @@ function Contact() {
 
   return (
     <section
-      id="events"
+      id="contact"
       style={{
         backgroundColor: "var(--bg-color)",
         height: "100%",
