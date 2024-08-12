@@ -38,13 +38,14 @@ function Home() {
         backgroundColor: "var(--bg-color)",
         height: "100%",
         width: "100%",
+        paddingBottom: "100px",
       }}
     >
       <div className="container">
         <Hero />
         <AboutSection />
-        <MembersSection />
-        <EventsSection />
+        {/* <MembersSection />
+        <EventsSection /> */}
       </div>
     </section>
   );

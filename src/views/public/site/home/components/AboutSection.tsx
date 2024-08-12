@@ -9,12 +9,13 @@ import TeamworkSvg from "../../../../../assets/icons/Teamwork";
 import TitleSectionComponent from "../../../../../components/core-components/titleSection";
 
 const FeatureSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2, 2),
-  height: "512px",
+  height: "100%",
+  width: "100%",
 }));
 
 const ValueCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(4),
+  width: "100%",
   textAlign: "center",
   borderRadius: "16px",
   boxShadow: "0px 4px 4px 4px rgba(0, 0, 0, 0.2)",
@@ -64,9 +65,11 @@ function AboutSection() {
   };
 
   return (
-    <>
-      <TitleSectionComponent titleText="Hakkımızda" />
-      <FeatureSection>
+    <Grid container={!isMobile} spacing={4} xs={12} m={"auto"} height={"100%"}>
+      <Grid item xs={12}>
+        <TitleSectionComponent titleText="Hakkımızda" />
+      </Grid>
+      <FeatureSection padding={isMobile ? 0 : "16px 16px"}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={isMobile ? 12 : 4}>
             <ValueCard>
@@ -175,28 +178,30 @@ function AboutSection() {
                   etkinlikler düzenlemekteyiz.
                 </p>
               </ValueCard>
-              <LoadingButton
-                variant="contained"
-                loading={loading}
-                onClick={handleDownload}
-                loadingIndicator="İndiriliyor..."
-                startIcon={<DownloadIcon />}
-                sx={{
-                  mt: 6,
-                  width: "100%",
-                  backgroundColor: "#333",
-                  color: "white",
-                  borderRadius: "20px",
-                  padding: "5px 20px",
-                  height: "50px",
-                  textTransform: "capitalize",
-                  "&:hover": { backgroundColor: "#000" },
-                }}
-              >
-                <span className="B-18" style={{ color: "#fff" }}>
-                  Tüzüğümüzü İndirin
-                </span>
-              </LoadingButton>
+              {!isMobile && (
+                <LoadingButton
+                  variant="contained"
+                  loading={loading}
+                  onClick={handleDownload}
+                  loadingIndicator="İndiriliyor..."
+                  startIcon={<DownloadIcon />}
+                  sx={{
+                    mt: 6,
+                    width: "100%",
+                    backgroundColor: "#333",
+                    color: "white",
+                    borderRadius: "20px",
+                    padding: "5px 20px",
+                    height: "50px",
+                    textTransform: "capitalize",
+                    "&:hover": { backgroundColor: "#000" },
+                  }}
+                >
+                  <span className="B-18" style={{ color: "#fff" }}>
+                    Tüzüğümüzü İndirin
+                  </span>
+                </LoadingButton>
+              )}
             </Stack>
           </Grid>
 
@@ -230,9 +235,34 @@ function AboutSection() {
               </p>
             </ValueCard>
           </Grid>
+          {isMobile && (
+            <Grid item xs={12} sm={12}>
+              <LoadingButton
+                variant="contained"
+                loading={loading}
+                onClick={handleDownload}
+                loadingIndicator="İndiriliyor..."
+                startIcon={<DownloadIcon />}
+                sx={{
+                  width: "100%",
+                  backgroundColor: "#333",
+                  color: "white",
+                  borderRadius: "20px",
+                  padding: "5px 20px",
+                  height: "50px",
+                  textTransform: "capitalize",
+                  "&:hover": { backgroundColor: "#000" },
+                }}
+              >
+                <span className="B-18" style={{ color: "#fff" }}>
+                  Tüzüğümüzü İndirin
+                </span>
+              </LoadingButton>
+            </Grid>
+          )}
         </Grid>
       </FeatureSection>
-    </>
+    </Grid>
   );
 }
 
