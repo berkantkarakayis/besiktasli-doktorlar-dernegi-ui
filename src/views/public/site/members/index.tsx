@@ -20,6 +20,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { members } from "../../../../data/Data";
 import { cities } from "../../../../data/Data";
+import { expertises } from "../../../../data/Data";
 import DoctorProfilePhoto from "../../../../assets/images/doctor3.png";
 import { SelectChangeEvent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -73,8 +74,14 @@ const replaceTurkishChars = (str: string): string => {
 const Members = () => {
   const [page, setPage] = useState(1);
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
+  const [selectedExpertises, setSelectedExpertises] = useState<string[]>([]);
   const memberCities = new Set(members.map((member) => member.city));
   const availableCities = cities.filter((city) => memberCities.has(city.name));
+  const memberExpertises = new Set(members.map((member) => member.expertise));
+  const availableExpertises = expertises
+    .filter((expertise) => memberExpertises.has(expertise.name))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
@@ -87,6 +94,15 @@ const Members = () => {
     setSelectedCities(typeof value === "string" ? value.split(",") : value);
   };
 
+  const handleExpertiseChange = (
+    event: SelectChangeEvent<typeof selectedExpertises>
+  ) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedExpertises(typeof value === "string" ? value.split(",") : value);
+  };
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -94,7 +110,13 @@ const Members = () => {
   const filteredMembers = members
     .filter(
       (member) =>
-        selectedCities.length === 0 || selectedCities.includes(member.city)
+        selectedCities.length === 0 ||
+        selectedCities.includes(member.city ?? "")
+    )
+    .filter(
+      (member) =>
+        selectedExpertises.length === 0 ||
+        selectedExpertises.includes(member.expertise ?? "")
     )
     .filter((member) =>
       replaceTurkishChars(member.name.toLowerCase()).includes(
@@ -130,7 +152,7 @@ const Members = () => {
         <TitleSectionComponent titleText="Üyelerimiz" />
 
         <Grid container spacing={4}>
-          <Grid item xs={6} my={4}>
+          <Grid item xs={4} my={4}>
             <Select
               multiple
               value={selectedCities}
@@ -167,7 +189,46 @@ const Members = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={6} my={4}>
+          <Grid item xs={4} my={4}>
+            <Select
+              multiple
+              value={selectedExpertises}
+              onChange={handleExpertiseChange}
+              displayEmpty
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <em>Tüm Branşlar</em>;
+                }
+                return selected.join(", ");
+              }}
+              fullWidth
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "black",
+                  },
+                },
+                "& .MuiMenuItem-root": {
+                  "&:hover": {
+                    backgroundColor: "grey",
+                  },
+                  "&.Mui-selected, &.Mui-selected:hover": {
+                    backgroundColor: "grey",
+                  },
+                },
+              }}
+            >
+              {availableExpertises.map((expertise) => (
+                <MenuItem key={expertise.name} value={expertise.name}>
+                  <Checkbox
+                    checked={selectedExpertises.indexOf(expertise.name) > -1}
+                  />
+                  <ListItemText primary={expertise.name} />
+                </MenuItem>
+              ))}
+            </Select>
+          </Grid>
+          <Grid item xs={4} my={4}>
             <TextField
               fullWidth
               label="Üye ara"
@@ -212,7 +273,7 @@ const Members = () => {
                       className="B-18"
                       style={{ color: "var(--white-color)" }}
                     >
-                      {member.city}
+                      {member.city} - {member.expertise}
                     </span>
                   </CityBox>
                 </Stack>
