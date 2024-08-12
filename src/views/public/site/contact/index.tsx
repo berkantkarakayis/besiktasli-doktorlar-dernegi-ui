@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Stack, Box } from "@mui/material";
+import { Card, Grid, Stack, Box, useTheme, useMediaQuery } from "@mui/material";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
 import PhoneIcon from "@mui/icons-material/Phone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -8,30 +8,61 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MailIcon from "@mui/icons-material/Mail";
 
 function Contact() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const contactInfo = [
     {
-      icon: <PhoneIcon sx={{ width: "40px", height: "40px" }} />,
+      icon: (
+        <PhoneIcon
+          sx={{
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
+          }}
+        />
+      ),
       text: "+90 506 199 95 12",
       onClick: () => {
         window.location.href = "tel:+905061999512";
       },
     },
     {
-      icon: <MailIcon sx={{ width: "40px", height: "40px" }} />,
+      icon: (
+        <MailIcon
+          sx={{
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
+          }}
+        />
+      ),
       text: "info@besiktaslitibbiyeliler.org",
       onClick: () => {
         window.location.href = "mailto:info@besiktaslitibbiyeliler.org";
       },
     },
     {
-      icon: <WhatsAppIcon sx={{ width: "40px", height: "40px" }} />,
+      icon: (
+        <WhatsAppIcon
+          sx={{
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
+          }}
+        />
+      ),
       text: "+90 506 199 95 12",
       onClick: () => {
         window.location.href = "https://wa.me/905061999512";
       },
     },
     {
-      icon: <LocationOnIcon sx={{ width: "40px", height: "40px" }} />,
+      icon: (
+        <LocationOnIcon
+          sx={{
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
+          }}
+        />
+      ),
       text: "Dikilitaş, Beste Sokak No:5, Beşiktaş/İstanbul",
       onClick: () => {
         window.open(
@@ -41,7 +72,14 @@ function Contact() {
       },
     },
     {
-      icon: <AccessTimeIcon sx={{ width: "40px", height: "40px" }} />,
+      icon: (
+        <AccessTimeIcon
+          sx={{
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
+          }}
+        />
+      ),
       text: "Pazartesi - Cuma: 09:00 - 18:00",
     },
   ];
@@ -58,12 +96,12 @@ function Contact() {
       <div className="container">
         <TitleSectionComponent titleText="İletişim" />
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={isMobile ? 12 : 4}>
             <Grid container direction="column" spacing={3}>
               {contactInfo.map((info, index) => (
                 <Grid item xs={12} key={index}>
                   <Card
-                    onClick={info.onClick} // Kartı tıklanabilir hale getirir
+                    onClick={info.onClick}
                     sx={{
                       textAlign: "center",
                       borderRadius: "16px",
@@ -78,7 +116,8 @@ function Contact() {
                       flexDirection: "column",
                       justifyContent: "center",
                       padding: "30px",
-                      cursor: "pointer", // İmleç değiştirme
+                      cursor: "pointer",
+                      width: "100%",
                     }}
                   >
                     <Stack
@@ -89,14 +128,16 @@ function Contact() {
                       alignItems={"center"}
                     >
                       {info.icon}
-                      <span className="H-24">{info.text}</span>
+                      <span className={isMobile ? "B-18" : "H-24"}>
+                        {info.text}
+                      </span>
                     </Stack>
                   </Card>
                 </Grid>
               ))}
             </Grid>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={isMobile ? 12 : 8}>
             <Box
               sx={{
                 width: "100%",
