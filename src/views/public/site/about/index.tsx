@@ -51,8 +51,6 @@ const About = () => {
         backgroundColor: "var(--bg-color)",
         height: "100%",
         paddingBottom: "100px",
-        paddingLeft: "50px",
-        paddingRight: "50px",
       }}
     >
       <div className="container">
