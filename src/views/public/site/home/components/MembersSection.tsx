@@ -37,7 +37,14 @@ function MembersSection() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid container={!isMobile} spacing={4} xs={12} m={"auto"} height={"100%"}>
+    <Grid
+      container={!isMobile}
+      spacing={4}
+      xs={12}
+      m={"auto"}
+      height={"100%"}
+      justifyContent="center"
+    >
       <Grid item xs={12}>
         <TitleSectionComponent titleText="Üyelerimiz" />
       </Grid>
@@ -81,6 +88,7 @@ function MembersSection() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Link to={`/uyeler`}>
         <Button
           variant="contained"

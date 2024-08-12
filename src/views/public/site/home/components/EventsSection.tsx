@@ -28,7 +28,14 @@ function EventsSection() {
   };
 
   return (
-    <Grid container={!isMobile} spacing={4} xs={12} m={"auto"} height={"100%"}>
+    <Grid
+      container={!isMobile}
+      spacing={4}
+      xs={12}
+      m={"auto"}
+      height={"100%"}
+      justifyContent="center"
+    >
       <Grid item xs={12} md={isMobile ? 12 : 8} my={2}>
         <TitleSectionComponent titleText="Etkinlikler" />
       </Grid>
