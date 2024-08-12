@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, Box, Stack, Button } from "@mui/material";
+import {
+  Card,
+  Box,
+  Stack,
+  Button,
+  Grid,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { styled } from "@mui/system";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -24,14 +32,19 @@ const MemberCard = styled(Card)(({ theme }) => ({
 }));
 
 function MembersSection() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
-    <>
-      <TitleSectionComponent titleText="Üyelerimiz" />
+    <Grid container={!isMobile} spacing={4} xs={12} m={"auto"} height={"100%"}>
+      <Grid item xs={12}>
+        <TitleSectionComponent titleText="Üyelerimiz" />
+      </Grid>
 
       <Swiper
         modules={[Autoplay, Navigation]}
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={isMobile ? 1 : 4}
         navigation
         scrollbar={{ draggable: true }}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -85,7 +98,7 @@ function MembersSection() {
           Tümünü Gör
         </span>
       </Button>
-    </>
+    </Grid>
   );
 }
 

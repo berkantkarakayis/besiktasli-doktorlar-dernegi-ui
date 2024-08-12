@@ -44,8 +44,8 @@ function Home() {
       <div className="container">
         <Hero />
         <AboutSection />
-        {/* <MembersSection />
-        <EventsSection /> */}
+        <MembersSection />
+        {/* <EventsSection /> */}
       </div>
     </section>
   );
