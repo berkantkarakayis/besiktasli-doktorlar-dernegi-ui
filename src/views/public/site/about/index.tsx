@@ -16,6 +16,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import doctorImage from "../../../../assets/images/aboutpagephoto.jpeg";
+import MaleProfilePhoto from "../../../../assets/images/male-doc.png";
+import FemaleProfilePhoto from "../../../../assets/images/female-doc.webp";
 import { boardOfDirectors } from "../../../../data/Data";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
 
@@ -172,7 +174,12 @@ const About = () => {
               <DoctorCard>
                 <Avatar
                   alt={boardOfDirectors.name}
-                  src={boardOfDirectors.image}
+                  src={
+                    boardOfDirectors.image ||
+                    (boardOfDirectors.gender === "male"
+                      ? MaleProfilePhoto
+                      : FemaleProfilePhoto)
+                  }
                   sx={{ width: 150, height: 150, margin: "0 auto" }}
                 />
                 <CardContent>

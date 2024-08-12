@@ -621,37 +621,44 @@ export const boardOfDirectors = [
   {
     name: "Dr. Ali KILIÇ",
     position: "Yönetim Kurulu Başkanı",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Uzm. Dr. Yavuz GÜVEN",
     position: "Yönetim Kurulu Başkan Yardımcısı",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Doç. Dr. Aytaç ŞAHİN",
     position: "Genel Sekreter",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Uzm. Dr. Mehmet AYDOĞAN",
     position: "Yönetim Kurulu Üyesi",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Uzm. Dr. Mahmut SERT",
     position: "Yönetim Kurulu Üyesi",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Prof. Dr. Salih BOĞA",
     position: "Yönetim Kurulu Üyesi",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
   {
     name: "Prof. Dr. Abdullah Emre YILDIRIM",
     position: "Yönetim Kurulu Üyesi",
-    image: Doctor3,
+    gender: "male",
+    image: "",
   },
 ];
 
