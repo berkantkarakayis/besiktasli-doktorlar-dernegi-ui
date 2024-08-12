@@ -66,7 +66,7 @@ function MembersSection() {
                 style={{
                   width: "100%",
                   height: "295px",
-                  borderRadius: "8px",
+                  borderRadius: "16px",
                 }}
               />
               <Stack spacing={1} mt={1}>
