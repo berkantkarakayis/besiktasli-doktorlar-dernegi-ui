@@ -21,7 +21,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { members } from "../../../../data/Data";
 import { cities } from "../../../../data/Data";
 import { expertises } from "../../../../data/Data";
-import DoctorProfilePhoto from "../../../../assets/images/doctor3.png";
+import FemaleProfilePhoto from "../../../../assets/images/female-doc.webp";
+import MaleProfilePhoto from "../../../../assets/images/male-doc.png";
 import { SelectChangeEvent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import TitleSectionComponent from "../../../../components/core-components/titleSection";
@@ -260,12 +261,18 @@ const Members = () => {
                       navigate(`/uyeler/${member.id}/${member.name}`)
                     }
                     alt={member.name}
-                    src={DoctorProfilePhoto}
+                    src={
+                      member.img ||
+                      (member.gender === "male"
+                        ? MaleProfilePhoto
+                        : FemaleProfilePhoto)
+                    }
                     style={{
                       width: "100%",
                       height: "300px",
                       borderRadius: "16px 16px 0 0",
                       cursor: "pointer",
+                      objectFit: "cover",
                     }}
                   />
                   <CityBox>
